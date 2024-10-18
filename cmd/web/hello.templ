@@ -57,7 +57,11 @@ templ App() {
         </div>
     </div>
 
-    <button id="generate-btn" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+    <button id="generate-btn"
+        hx-post="/api/generate"
+        hx-swap="none"
+        hx-headers='{"Content-Type": "application/json"}'
+        hx-vals='js:{"json": inputEditor.getValue()}' class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
         Generate Go Code
     </button>
 
@@ -73,30 +77,12 @@ templ App() {
         outputEditor.setFontSize(16);
         outputEditor.setReadOnly(true);
 
-        const btn = document.getElementById("generate-btn");
-
-        // Add event listener for the button
-        document.getElementById("generate-btn").addEventListener("click", function () {
-            // Get the JSON input from inputEditor
-            var jsonInput = inputEditor.getValue();
-
-            // Send a POST request with the JSON input
-            fetch("/api/generate", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ json: jsonInput })  // Send the JSON input
-            })
-                .then(response => response.text())  // Parse the response as text
-                .then(goCode => {
-                    // Set the outputEditor value to the Go code returned by the server
-                    outputEditor.setValue(goCode, 1);
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-        });
+        document.body.addEventListener('htmx:afterRequest', function(evt) {
+        if (evt.detail.target.id === 'generate-btn') {
+            let goCode = evt.detail.xhr.responseText;
+            outputEditor.setValue(goCode, 1);
+        }
+    });
     </script>
     <script src="https://unpkg.com/htmx.org"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
