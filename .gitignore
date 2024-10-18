@@ -1,0 +1,3 @@
+jsontypes
+*.json
+type_gen.go
