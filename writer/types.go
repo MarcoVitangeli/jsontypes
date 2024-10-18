@@ -7,6 +7,7 @@ const (
 	String  WriterType = "string"
 	Bool    WriterType = "bool"
 	Any     WriterType = "interface{}"
+    DateTime WriterType = "time.Time"
 	Object  WriterType = "map[string]interface{}"
 	Array   WriterType = "[]interface{}"
 )

@@ -8,6 +8,7 @@ import (
 	"regexp"
 	"strings"
 	"unicode"
+    "time"
 )
 
 var (
@@ -29,7 +30,7 @@ func NewTypeWriter(op string) *TypeWriter {
 
 // Init creates the initial boilerplate for package
 func (tw *TypeWriter) Init() error {
-	f, err := os.OpenFile(tw.OutPath, os.O_CREATE|os.O_TRUNC, 0666)
+	f, err := os.OpenFile(tw.OutPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, os.ModePerm)
 	if err != nil {
 		return err
 	}
@@ -177,7 +178,12 @@ func getType(v interface{}) WriterType {
 	if _, ok := v.(map[string]interface{}); ok {
 		return Object
 	}
-	if _, ok := v.(string); ok {
+
+	if val, ok := v.(string); ok {
+
+        if _, err := time.Parse(time.RFC3339, val); err == nil {
+            return DateTime
+        }
 		return String
 	}
 	return Any

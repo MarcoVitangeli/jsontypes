@@ -35,7 +35,9 @@ func Gen(input []byte, opts ...GenOption) error {
 func generateObjectType(v map[string]interface{}, conf *GenConfiguration) error {
 	outPath := "type_gen.go"
 	tw := writer.NewTypeWriter(outPath)
-	tw.Init()
+    if err := tw.Init(); err != nil {
+        return err
+    }
 
 	err := tw.Write(v, conf.Depth)
 	if err != nil {
