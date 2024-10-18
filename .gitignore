@@ -2,3 +2,4 @@ jsontypes
 main
 *.json
 type_gen.go
+web
