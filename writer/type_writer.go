@@ -7,8 +7,8 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	"time"
 	"unicode"
-    "time"
 )
 
 var (
@@ -98,7 +98,7 @@ func (tw *TypeWriter) consumeObject(raw map[string]interface{}, maxDepth uint, d
 						if err != nil {
 							return sb, err
 						}
-						r = sb.String()
+						r = fmt.Sprintf("[]%s", sb.String())
 					} else {
 						t := getType(one)
 						r = fmt.Sprintf("[]%s", string(t))
@@ -180,9 +180,9 @@ func getType(v interface{}) WriterType {
 	}
 
 	if val, ok := v.(string); ok {
-        if _, err := time.Parse(time.RFC3339, val); err == nil {
-            return DateTime
-        }
+		if _, err := time.Parse(time.RFC3339, val); err == nil {
+			return DateTime
+		}
 		return String
 	}
 	return Any
