@@ -180,7 +180,6 @@ func getType(v interface{}) WriterType {
 	}
 
 	if val, ok := v.(string); ok {
-
         if _, err := time.Parse(time.RFC3339, val); err == nil {
             return DateTime
         }
