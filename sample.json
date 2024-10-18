@@ -1,0 +1,40 @@
+{
+  "id": "42964541194",
+  "type": "PushEvent",
+  "actor": {
+    "id": 32674032,
+    "login": "danielmichaels",
+    "display_login": "danielmichaels",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/danielmichaels",
+    "avatar_url": "https://avatars.githubusercontent.com/u/32674032?"
+  },
+  "repo": {
+    "id": 720264140,
+    "name": "danielmichaels/dotfiles",
+    "url": "https://api.github.com/repos/danielmichaels/dotfiles"
+  },
+  "payload": {
+    "repository_id": 720264140,
+    "push_id": 20770944722,
+    "size": 1,
+    "distinct_size": 1,
+    "ref": "refs/heads/main",
+    "head": "727c6e73faa327066b0eddf43e14b926ecbd44a0",
+    "before": "466373161c7f03de52a10ef0da372252f0697192",
+    "commits": [
+      {
+        "sha": "727c6e73faa327066b0eddf43e14b926ecbd44a0",
+        "author": {
+          "email": "dan@danielms.site",
+          "name": "Daniel Michaels"
+        },
+        "message": "updates for omakub",
+        "distinct": true,
+        "url": "https://api.github.com/repos/danielmichaels/dotfiles/commits/727c6e73faa327066b0eddf43e14b926ecbd44a0"
+      }
+    ]
+  },
+  "public": true,
+  "created_at": "2024-10-18T00:21:03Z"
+}
