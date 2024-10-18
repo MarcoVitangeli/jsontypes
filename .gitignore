@@ -1,3 +1,4 @@
 jsontypes
+main
 *.json
 type_gen.go
