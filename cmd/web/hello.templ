@@ -61,7 +61,7 @@ templ App() {
         hx-post="/api/generate"
         hx-swap="none"
         hx-headers='{"Content-Type": "application/json"}'
-        hx-vals='js:{"json": inputEditor.getValue()}' class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
+        hx-vals='js:{"json": JSON.stringify(inputEditor.getValue())}' class="mt-4 px-4 py-2 bg-blue-500 text-white rounded">
         Generate Go Code
     </button>
 

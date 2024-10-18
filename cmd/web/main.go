@@ -5,6 +5,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 
 	"github.com/MarcoVitangeli/jsontypes/gen"
 	"github.com/a-h/templ"
@@ -17,13 +18,17 @@ func generateGoCode(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	jsonInput := r.FormValue("json")
+	jsonInput, err := strconv.Unquote(r.FormValue("json"))
+	log.Println(jsonInput)
 	if jsonInput == "" {
+		log.Println(err)
 		http.Error(w, "Missing 'json' input", http.StatusBadRequest)
 		return
 	}
 
 	inputBytes := []byte(jsonInput)
+
+	os.WriteFile("out.txt", inputBytes, 0666)
 
 	// TODO: use output buffer instead of reading file
 	if err := gen.Gen(inputBytes); err != nil {
