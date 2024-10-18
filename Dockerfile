@@ -7,7 +7,7 @@ COPY . /app
 RUN templ generate cmd/web
 RUN go build ./cmd/web/
 
-FROM ubuntu:jammy AS release-stage
+FROM golang:1.23 AS release-stage
 WORKDIR /
 COPY --from=build-stage /app/web /web
 EXPOSE 3000
