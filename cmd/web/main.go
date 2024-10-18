@@ -28,8 +28,6 @@ func generateGoCode(w http.ResponseWriter, r *http.Request) {
 
 	inputBytes := []byte(jsonInput)
 
-	os.WriteFile("out.txt", inputBytes, 0666)
-
 	// TODO: use output buffer instead of reading file
 	if err := gen.Gen(inputBytes); err != nil {
 		log.Println(err)
