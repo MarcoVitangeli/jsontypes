@@ -1,40 +1,241 @@
 {
-  "id": "42964541194",
-  "type": "PushEvent",
-  "actor": {
-    "id": 32674032,
-    "login": "danielmichaels",
-    "display_login": "danielmichaels",
-    "gravatar_id": "",
-    "url": "https://api.github.com/users/danielmichaels",
-    "avatar_url": "https://avatars.githubusercontent.com/u/32674032?"
-  },
-  "repo": {
-    "id": 720264140,
-    "name": "danielmichaels/dotfiles",
-    "url": "https://api.github.com/repos/danielmichaels/dotfiles"
-  },
-  "payload": {
-    "repository_id": 720264140,
-    "push_id": 20770944722,
-    "size": 1,
-    "distinct_size": 1,
-    "ref": "refs/heads/main",
-    "head": "727c6e73faa327066b0eddf43e14b926ecbd44a0",
-    "before": "466373161c7f03de52a10ef0da372252f0697192",
-    "commits": [
-      {
-        "sha": "727c6e73faa327066b0eddf43e14b926ecbd44a0",
-        "author": {
-          "email": "dan@danielms.site",
-          "name": "Daniel Michaels"
+  "company": {
+    "name": "Global Tech Solutions",
+    "established": 2001,
+    "location": {
+      "headquarters": {
+        "address": {
+          "street": "456 Global Lane",
+          "city": "Innovation Valley",
+          "state": "NY",
+          "zip": "67890"
         },
-        "message": "updates for omakub",
-        "distinct": true,
-        "url": "https://api.github.com/repos/danielmichaels/dotfiles/commits/727c6e73faa327066b0eddf43e14b926ecbd44a0"
+        "country": "USA"
+      },
+      "branches": {
+        "branch1": {
+          "name": "European Division",
+          "address": {
+            "street": "12 Tech Street",
+            "city": "Berlin",
+            "country": "Germany"
+          },
+          "established": 2010,
+          "is_active": true,
+          "manager": {
+            "id": 1,
+            "name": "Max Müller",
+            "contact": {
+              "email": "max.muller@globaltech.com",
+              "phone": "+49-30-123456"
+            },
+            "joined_at": "2015-03-15T09:00:00Z"
+          }
+        },
+        "branch2": {
+          "name": "Asian Division",
+          "address": {
+            "street": "78 Innovation Drive",
+            "city": "Tokyo",
+            "country": "Japan"
+          },
+          "established": 2015,
+          "is_active": true,
+          "manager": {
+            "id": 2,
+            "name": "Akira Tanaka",
+            "contact": {
+              "email": "akira.tanaka@globaltech.com",
+              "phone": "+81-3-123456"
+            },
+            "joined_at": "2016-04-20T09:00:00Z"
+          }
+        }
       }
-    ]
-  },
-  "public": true,
-  "created_at": "2024-10-18T00:21:03Z"
+    },
+    "departments": {
+      "department1": {
+        "name": "Research and Development",
+        "head": {
+          "id": 3,
+          "name": "Dr. Emily Clarke",
+          "position": "Chief Technology Officer",
+          "contact": {
+            "email": "emily.clarke@globaltech.com",
+            "phone": "+1-555-9876"
+          },
+          "joined_at": "2012-01-10T09:00:00Z"
+        },
+        "budget": {
+          "annual": 500000,
+          "allocated": {
+            "salaries": 300000,
+            "equipment": 100000,
+            "research": 100000
+          }
+        },
+        "projects": {
+          "project1": {
+            "id": 101,
+            "name": "Next-Gen AI System",
+            "description": "Developing an advanced AI system for various applications.",
+            "status": "In Progress",
+            "deadline": "2025-05-01T17:00:00Z",
+            "is_critical": true,
+            "team_lead": {
+              "id": 4,
+              "name": "Alice Johnson",
+              "contact": {
+                "email": "alice.johnson@globaltech.com",
+                "phone": "+1-555-1234"
+              },
+              "joined_at": "2018-06-01T09:00:00Z"
+            },
+            "milestones": {
+              "milestone1": {
+                "name": "Research Phase",
+                "due_date": "2024-12-01T17:00:00Z",
+                "completed": false
+              },
+              "milestone2": {
+                "name": "Development Phase",
+                "due_date": "2025-04-01T17:00:00Z",
+                "completed": false
+              }
+            }
+          },
+          "project2": {
+            "id": 102,
+            "name": "Blockchain Integration",
+            "description": "Integrating blockchain technology into existing systems.",
+            "status": "Planning",
+            "deadline": "2025-08-15T17:00:00Z",
+            "is_critical": false,
+            "team_lead": {
+              "id": 5,
+              "name": "Daniel Carter",
+              "contact": {
+                "email": "daniel.carter@globaltech.com",
+                "phone": "+1-555-4321"
+              },
+              "joined_at": "2019-07-12T09:00:00Z"
+            },
+            "milestones": {
+              "milestone1": {
+                "name": "Requirements Gathering",
+                "due_date": "2025-02-01T17:00:00Z",
+                "completed": false
+              }
+            }
+          }
+        }
+      },
+      "department2": {
+        "name": "Marketing",
+        "head": {
+          "id": 6,
+          "name": "Laura Smith",
+          "position": "Chief Marketing Officer",
+          "contact": {
+            "email": "laura.smith@globaltech.com",
+            "phone": "+1-555-5678"
+          },
+          "joined_at": "2014-05-20T09:00:00Z"
+        },
+        "budget": {
+          "annual": 300000,
+          "allocated": {
+            "advertising": 150000,
+            "events": 100000,
+            "research": 50000
+          }
+        },
+        "strategies": {
+          "strategy1": {
+            "name": "Digital Transformation",
+            "description": "Enhancing online presence through various digital channels.",
+            "objectives": {
+              "objective1": {
+                "name": "Increase Social Media Engagement",
+                "target": "20% increase by Q3 2024",
+                "status": "Ongoing",
+                "is_measurable": true
+              },
+              "objective2": {
+                "name": "Launch New Website",
+                "target": "Complete by Q1 2024",
+                "status": "In Progress",
+                "is_measurable": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "employees": {
+      "employee1": {
+        "id": 101,
+        "name": "Alice Johnson",
+        "position": "Senior Researcher",
+        "skills": {
+          "skill1": "Machine Learning",
+          "skill2": "Data Analysis",
+          "skill3": "AI Development"
+        },
+        "contact": {
+          "email": "alice.johnson@globaltech.com",
+          "phone": "+1-555-1234"
+        },
+        "performance": {
+          "reviews": {
+            "review1": {
+              "year": 2022,
+              "score": 4.8,
+              "feedback": "Excellent performance and innovative ideas.",
+              "is_promoted": true,
+              "review_date": "2022-11-15T09:00:00Z"
+            },
+            "review2": {
+              "year": 2023,
+              "score": 4.7,
+              "feedback": "Consistently exceeds expectations.",
+              "is_promoted": false,
+              "review_date": "2023-11-15T09:00:00Z"
+            }
+          }
+        }
+      },
+      "employee2": {
+        "id": 102,
+        "name": "Bob Smith",
+        "position": "Marketing Analyst",
+        "skills": {
+          "skill1": "Market Research",
+          "skill2": "Data Visualization"
+        },
+        "contact": {
+          "email": "bob.smith@globaltech.com",
+          "phone": "+1-555-9876"
+        },
+        "performance": {
+          "reviews": {
+            "review1": {
+              "year": 2022,
+              "score": 4.5,
+              "feedback": "Great insights into market trends.",
+              "is_promoted": false,
+              "review_date": "2022-12-01T09:00:00Z"
+            },
+            "review2": {
+              "year": 2023,
+              "score": 4.6,
+              "feedback": "Strong analytical skills.",
+              "is_promoted": true,
+              "review_date": "2023-12-01T09:00:00Z"
+            }
+          }
+        }
+      }
+    }
+  }
 }
